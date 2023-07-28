@@ -1,7 +1,7 @@
 
 #declare -a allRepositories=("<Name of Repository 1>::<RepositoryUrl1>@@<BranchName1>" "<Name of Repository 2>::<RepositoryUrl2>@@<BranchName2>")
 
-declare -a allRepositories=("weatherApp::https://github.com/kaushalpbehere/WeatherApplication.git@@main" "FollowApp::https://github.com/kaushalpbehere/FollowApp@@main" "LocationBasedSearch::https://github.com/kaushalpbehere/LocationBasedSearch@@main" "DesignPatterns::https://github.com/kaushalpbehere/DesignPatterns@@main" "NetDesignPatterns::https://github.com/kaushalpbehere/NetDesignPatterns@@main")
+declare -a allRepositories=("lab-work-server::https://github.com/lab-work-projects/lab-work-server.git@@master" "FollowApp::https://github.com/lab-work-projects/lab-work-client.git@@master")
 
 for eachRepository in "${allRepositories[@]}";
  do 
@@ -30,4 +30,13 @@ for eachRepository in "${allRepositories[@]}";
         git reset --hard 
         git pull 
     fi
+done 
+
+for eachRepository in "${allRepositories[@]}";
+ do 
+ 	cd $eachRepository
+    rm -rf package-lock.json
+    npm prune
+    npm i
+
 done 

@@ -1,7 +1,7 @@
 
 #declare -a allRepositories=("<Name of Repository 1>::<RepositoryUrl1>@@<BranchName1>" "<Name of Repository 2>::<RepositoryUrl2>@@<BranchName2>")
 
-declare -a allRepositories=("lab-work-server::https://github.com/lab-work-projects/lab-work-server.git@@master" "FollowApp::https://github.com/lab-work-projects/lab-work-client.git@@master")
+sdeclare -a allRepositories=("lab-work-server::https://github.com/lab-work-projects/lab-work-server.git@@master" "lab-work-client::https://github.com/lab-work-projects/lab-work-client.git@@master")
 
 for eachRepository in "${allRepositories[@]}";
  do 
@@ -35,8 +35,7 @@ done
 for eachRepository in "${allRepositories[@]}";
  do 
  	cd $eachRepository
-    rm -rf package-lock.json
-    npm prune
+    
     npm i
 
 done 

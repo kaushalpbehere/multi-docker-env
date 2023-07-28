@@ -23,6 +23,9 @@ for eachRepository in "${allRepositories[@]}";
 	    else
         echo "$eachRepository is Empty"
 	    fi
+        echo "Installing npm packages..."
+        cd $repositoryName
+        npm i 
 	else 
         git clone -b $branchName $url
 
@@ -30,12 +33,4 @@ for eachRepository in "${allRepositories[@]}";
         git reset --hard 
         git pull 
     fi
-done 
-
-for eachRepository in "${allRepositories[@]}";
- do 
- 	cd $eachRepository
-    
-    npm i
-
 done 

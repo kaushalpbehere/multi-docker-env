@@ -24,7 +24,13 @@ for eachRepository in "${allRepositories[@]}";
         echo "$eachRepository is Empty"
 	    fi
        
-	else 
+       echo "Installing npm packages..."
+       npm prune 
+       npm i
+       echo "List of installed packages ..."
+       npm ll
+
+    else 
         git clone -b $branchName $url
 
         echo "Resetting...."

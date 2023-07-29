@@ -1,7 +1,7 @@
 
 #declare -a allRepositories=("<Name of Repository 1>::<RepositoryUrl1>@@<BranchName1>" "<Name of Repository 2>::<RepositoryUrl2>@@<BranchName2>")
 
-declare -a allRepositories=("lab-work-server::https://github.com/lab-work-projects/lab-work-server.git@@master" "lab-work-client::https://github.com/lab-work-projects/lab-work-client.git@@master")
+declare -a allRepositories=("lab-work-server::https://github.com/lab-work-projects/lab-work-server.git@@dev/kaushalb" "lab-work-client::https://github.com/lab-work-projects/lab-work-client.git@@dev/kaushalb")
 
 for eachRepository in "${allRepositories[@]}";
  do 
